@@ -81,7 +81,7 @@
   flex-direction: row-reverse;
 }
 
-/* Login page RTL */
+
 [dir="rtl"] .login-card {
   direction: rtl;
 }
@@ -194,20 +194,6 @@
   direction: rtl;
 }
 
-/* Mobile responsiveness for RTL */
-@media (max-width: 768px) {
-  [dir="rtl"] .navbar {
-    padding: 0 var(--spacing-md);
-  }
-  
-  [dir="rtl"] .navbar nav {
-    flex-direction: column;
-  }
-  
-  [dir="rtl"] .footer-container {
-    text-align: center;
-  }
-}
 
 
 

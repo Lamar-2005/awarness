@@ -24,7 +24,7 @@
     'stats.card3.text': 'young athletes face anxiety or depression',
     'stats.card4.number': '70%',
     'stats.card4.text': 'hesitate to seek help due to stigma',
-      
+
     'topics.tag': '🧠 Key Topics',
     'topics.title': 'Understanding Mental Health in Sports',
     'topics.card1.title': 'Performance Pressure',
@@ -260,19 +260,19 @@
   }
 };
 
-// Get translation function
+
 function t(key) {
   const lang = localStorage.getItem('language') || 'en';
   return translations[lang][key] || key;
 }
 
-// Update all text content on the page
+
 function updatePageContent() {
   const lang = localStorage.getItem('language') || 'en';
   document.documentElement.setAttribute('lang', lang);
   document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   
-  // Update all elements with data-i18n attribute
+  
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     const translation = translations[lang][key];
