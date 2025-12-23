@@ -8,7 +8,7 @@
     }, 2000);
   });
 
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll(".slide");   
   const dots = document.querySelectorAll(".dot");
   let index = 0;
 
@@ -96,3 +96,103 @@
       errorModal.classList.add('show');
     }
   }
+
+  var galleryImages = [
+    {
+      src: 'images/gallery1.jpg',
+      caption: 'The weight of pressure and expectations'
+    },
+    {
+      src: 'images/slider 1.jpg',
+      caption: 'Finding strength in team support'
+    },
+    {
+      src: 'images/slider 2.jpg',
+      caption: 'Emotional vulnerability in sports'
+    },
+    {
+      src: 'images/slider 3.jpg',
+      caption: 'Recovery and therapeutic support'
+    },
+    {
+      src: 'images/gallery2.jpg',
+      caption: 'Mental wellness through mindfulness'
+    },
+    {
+      src: 'images/gallery3.jpg',
+      caption: 'The journey of rehabilitation'
+    },
+    {
+      src: 'images/gallery4.jpg',
+      caption: 'Overcoming physical and mental challenges'
+    },
+    {
+      src: 'images/gallery5.jpg.jpg',
+      caption: 'Finding peace and balance'
+    },
+    {
+      src: 'images/gallery6.jpg',
+      caption: 'Support systems that make a difference'
+    }
+  ];
+
+  function loadGallery() {
+    var grid = document.getElementById('galleryGrid');
+    grid.innerHTML = '';
+    
+    for (var i = 0; i < galleryImages.length; i++) {
+      var image = galleryImages[i];
+      var item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.setAttribute('data-index', i);
+      item.onclick = function() {
+        var index = parseInt(this.getAttribute('data-index'));
+        openLightbox(index);
+      };
+      
+      var img = document.createElement('img');
+      img.src = image.src;
+      img.alt = image.caption;
+      
+      var caption = document.createElement('div');
+      caption.className = 'gallery-caption';
+      caption.textContent = image.caption;
+      
+      item.appendChild(img);
+      item.appendChild(caption);
+      grid.appendChild(item);
+    }
+  }
+
+  function openLightbox(index) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+    
+    lightboxImg.src = galleryImages[index].src;
+    lightboxCaption.textContent = galleryImages[index].caption;
+    lightbox.classList.add('active');
+    
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target.id === 'lightbox') {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+  // Load gallery when page loads
+  window.addEventListener('load', loadGallery);
