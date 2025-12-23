@@ -138,7 +138,7 @@
 
   function loadGallery() {
     var grid = document.getElementById('galleryGrid');
-    grid.innerHTML = '';
+    grid.innerHTML = '';    
     
     for (var i = 0; i < galleryImages.length; i++) {
       var image = galleryImages[i];
@@ -194,5 +194,5 @@
     }
   });
 
-  // Load gallery when page loads
+ 
   window.addEventListener('load', loadGallery);
