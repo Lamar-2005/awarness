@@ -194,3 +194,14 @@
 
  
   window.addEventListener('load', loadGallery);
+const languageToggle = document.getElementById("languageToggle");
+if (languageToggle) {
+  languageToggle.addEventListener("click", () => {
+    const currentLang = localStorage.getItem('language') || 'en';
+    const newLang = currentLang === 'en' ? 'ar' : 'en';
+    localStorage.setItem('language', newLang);
+    updatePageContent();
+  });
+}
+
+ 
