@@ -130,10 +130,8 @@
       src: 'images/gallery5.jpg.jpg',
       caption: 'Finding peace and balance'
     },
-    {
-      src: 'images/gallery6.jpg',
-      caption: 'Support systems that make a difference'
-    }
+    
+   
   ];
 
   function loadGallery() {
