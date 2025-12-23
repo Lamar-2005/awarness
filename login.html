@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Strong Body, Strong Mind</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="heart-icon">💙</div>
+    <h1>Strong Body, Strong Mind</h1>
+    <div class="loader-bar">
+      <span></span>
+    </div>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <p>Loading your experience...</p>
+  </div>
+</div>
+
+<div id="website">
+
+<header class="navbar">
+  <div class="logo">
+    💙 <span>Strong Body, Strong Mind</span>
+  </div>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="awarness.html">Awareness</a>
+    <a href="#">Gallery</a>
+    <a href="login.html">Login</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="nav-icons">
+    <span>🌐</span>
+    <span id="darkModeToggle" style="cursor: pointer;">🌙</span>
+  </div>
+</header>
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-icon">💙</div>
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Access your mental health support dashboard</p>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉️</span>
+          <input 
+            type="email" 
+            id="email" 
+            placeholder="you@example.com" 
+            required
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="••••••••" 
+            required
+          >
+          <span class="password-toggle" onclick="togglePassword()">👁️</span>
+        </div>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" id="remember">
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="sign-in-btn">Sign In</button>
+    </form>
+
+    <div class="divider">Or continue with</div>
+
+    <div class="social-login">
+      <button class="social-btn" title="Sign in with Google">
+        <span>G</span>
+      </button>
+      <button class="social-btn" title="Sign in with GitHub">
+        <span>⚫</span>
+      </button>
+    </div>
+
+    <p class="signup-link">
+      Don't have an account? <a href="#">Sign up here</a>
+    </p>
+
+    <div class="privacy-notice">
+      <span>🔒</span>
+      <span>Your privacy and mental health are our priority</span>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="errorModal">
+  <div class="modal">
+    <div class="modal-icon">❌</div>
+    <h2>Wrong Password</h2>
+    <p>The password you entered is incorrect. Please try again.</p>
+    <button class="modal-btn" onclick="closeModal()">Try Again</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="modal-icon">✅</div>
+    <h2>Login Successful!</h2>
+    <p>Welcome back! Redirecting to your dashboard...</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>💙 Strong Body, Strong Mind</h2>
+    <p>Our mission is to support athletes and sports participants in their mental health journey.</p>
+  </div>
+
+  <div class="footer-social">
+    <h4>Connect With Us</h4>
+    <div class="social-icons">
+      <a href="#">🐦</a>
+      <a href="#">💼</a>
+      <a href="#">📷</a>
+      <a href="#">✉️</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Made with <span class="heart">❤️</span></p>
+    <p>© 2025 Strong Body, Strong Mind. All rights reserved.</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
